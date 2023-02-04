@@ -1,0 +1,29 @@
+﻿@model MvcStock.Models.Entity.Tbl_Categories
+
+@{
+    ViewBag.Title = "GetCategory";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@using (Html.BeginForm("Update","Category",FormMethod.Post))
+ {
+    <div class="form-group">
+
+        @Html.LabelFor(c=>c.CategoryID)
+        @Html.TextBoxFor(c => c.CategoryID, new { @class = "form-control" })
+
+        <br/>
+
+        @Html.LabelFor(c => c.CategoryName)
+        @Html.TextBoxFor(c=>c.CategoryName, new { @class = "form-control" })
+
+    </div>
+
+    <div>
+
+        <button class="btn btn-warning">Update Category</button>
+
+    </div>
+
+ }
+

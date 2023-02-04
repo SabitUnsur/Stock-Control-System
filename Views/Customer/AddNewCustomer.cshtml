@@ -1,0 +1,28 @@
+﻿@model MvcStock.Models.Entity.Tbl_Customers
+@{
+    ViewBag.Title = "AddNewCustomer";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+
+    <div>
+        <label>Customer Name</label>
+        @Html.TextBoxFor(c => c.CustomerName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(c => c.CustomerName, "", new { @style = "color:red" })
+    </div>
+
+    <div>
+        <label style="margin-top:15px">Customer Surname</label>
+        @Html.TextBoxFor(c => c.CustomerSurname, new { @class = "form-control" })
+        @Html.ValidationMessageFor(c => c.CustomerSurname, "", new { @style = "color:red" })
+    </div>
+        
+    <div>
+        <button class="btn btn-info" style="margin-top:15px">Add New Customer</button>
+    </div>
+
+
+
+</form>
+
