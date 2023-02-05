@@ -1,5 +1,5 @@
 Stock Control System Website App
-User can see the categories,products and their branda,pricr,stocks also the customers
+User can see the categories,products and their brands,price,stocks also the customers
 New Category,Customer,Category can be added.It has Paging and the Filter operations.For now, there is no seperate parts between admin and user
 It will be added.
 
