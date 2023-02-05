@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
 
-<form class="form-group" method="post">
+<form class="form-group" method="post" action="/Customer/AddNewCustomer">
 
     <div>
         <label>Customer Name</label>
@@ -18,10 +18,16 @@
         @Html.ValidationMessageFor(c => c.CustomerSurname, "", new { @style = "color:red" })
     </div>
         
-    <div>
-        <button class="btn btn-info" style="margin-top:15px">Add New Customer</button>
+    <div style="margin-top:15px">
+        <button class="btn btn-info" id="btn1">Add New Customer</button>
     </div>
 
+    <script>
+
+        $('#btn1').click(function () {
+            alert('Customer added succesfully');
+        });
+    </script>
 
 
 </form>

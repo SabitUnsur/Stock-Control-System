@@ -12,9 +12,15 @@ namespace MvcStock.Controllers
         // GET: Customer
 
         MvcDbStokEntities db=new MvcDbStokEntities();
-        public ActionResult Index()
+        public ActionResult Index(string param)
         {
             var values = db.Tbl_Customers.ToList();
+
+            if (!string.IsNullOrEmpty(param))
+            {
+                values=values.Where(p=>p.CustomerName.Contains(param)).ToList();
+            }
+           
             return View(values);
         }
 

@@ -6,36 +6,15 @@
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
 
-<table class="table table-bordered">
 
-    <tr>
-        <th> Product ID </th>
-        <th> Category </th>
-        <th> Product Name </th>
-        <th> Brand </th>
-        <th> Price </th>
-        <th> Last Stock </th>
-        <th> DELETE </th>
-        <th> UPDATE </th>
-    </tr>
 
-    <tbody>
-
-        @foreach (var product in Model)
-        {
-            <tr>
-
-                <th> @product.productID </th>
-                <td> @product.Tbl_Categories.CategoryName</td>
-                <td> @product.productName </td>
-                <td> @product.productBrand </td>
-                <td> @product.productPrice </td>
-                <td> @product.productStock </td>
-                <td><a href="/Product/DELETE/@product.productID" class="btn btn-danger">DELETE</a></td>
-                <td><a href="/Product/GetProduct/@product.productID" class="btn btn-success">UPDATE</a></td>
-            </tr>
-        }
-    </tbody>
-</table>
 
 <a href="/Product/AddNewProduct" class="btn btn-primary">Add New Product</a>
+
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+<link href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" rel="stylesheet" />
+
+
+<script>
+    $('#tbl1').DataTable();
+</script>

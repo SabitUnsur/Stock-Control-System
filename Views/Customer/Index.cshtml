@@ -6,16 +6,28 @@
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
 
-<table class="table table-bordered">
+@*@using (Html.BeginForm("Index", "Customer", FormMethod.Get))
+{
+    <p>
+        <strong>Customer Name :</strong> @Html.TextBox("param")
+        <input type="submit" value="Search" />
+    </p>
 
-    <tr>
+}*@
 
-        <th> Customer ID </th>
-        <th> Customer Name </th>
-        <th> Customer Surname </th>
-        <th> DELETE </th>
-        <th> UPDATE </th>
-    </tr>
+<table id="tbl2" class="table table-bordered">
+
+    <thead>
+        <tr>
+
+            <th> Customer ID </th>
+            <th> Customer Name </th>
+            <th> Customer Surname </th>
+            <th> DELETE </th>
+            <th> UPDATE </th>
+           
+        </tr>
+    </thead>
 
     <tbody>
 
@@ -26,11 +38,28 @@
                 <th> @customer.CustomerID </th>
                 <td> @customer.CustomerName </td>
                 <td> @customer.CustomerSurname </td>
-                <td><a href="/Customer/DELETE/@customer.CustomerID" class="btn btn-danger">DELETE</a></td>
+                @*<td><a href="/Customer/DELETE/@customer.CustomerID" class="btn btn-danger">DELETE</a></td>*@
+                <td>
+                    @Html.ActionLink("Delete", "DELETE", new { Id = customer.CustomerID }, new
+                    {
+                        @class = "btn btn-warning"
+                                 ,
+                        onclick = "return confirm('Are you sure to delete?')"
+                    })
+                </td>
                 <td><a href="/Customer/GetCustomer/@customer.CustomerID" class="btn btn-success">UPDATE</a></td>
+
             </tr>
         }
     </tbody>
 </table>
 
 <a href="/Customer/AddNewCustomer/" class="btn btn-primary">Add New Customer</a>
+
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+<link href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" rel="stylesheet" />
+
+
+<script>
+    $('#tbl2').DataTable();
+</script>
