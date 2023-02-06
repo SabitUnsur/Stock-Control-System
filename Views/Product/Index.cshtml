@@ -6,8 +6,49 @@
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
 
+<table id="tbl1" class="table-bordered">
+
+    <thead>
+        <tr>
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Product Brand</th>
+            <th>Product Category</th>
+            <th>Product Price</th>
+            <th>Product Stock</th>
+            <th> DELETE</th>
+            <th> UPDATE</th>
+
+        </tr>
+
+    </thead>
 
 
+    <tbody>
+
+        @foreach (var product in Model)
+        {
+
+
+            <tr>
+
+                <td>@product.productID</td>
+                <td>@product.productName</td>
+                <td>@product.productBrand</td>
+                <td>@product.productCategory</td>
+                <td>@product.productPrice</td>
+                <td>@product.productStock</td>
+                <td> <a href="/Product/DELETE/@product.productID" class="btn btn-danger"> DELETE </a></td>
+                <td> <a href="/Product/Update/@product.productID" class="btn btn-success"> UPDATE</a></td>
+
+            </tr>
+
+
+        }
+
+    </tbody>
+
+</table>
 
 <a href="/Product/AddNewProduct" class="btn btn-primary">Add New Product</a>
 
