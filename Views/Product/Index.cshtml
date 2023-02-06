@@ -9,6 +9,7 @@
 <table id="tbl1" class="table-bordered">
 
     <thead>
+
         <tr>
             <th>Product ID</th>
             <th>Product Name</th>
@@ -23,13 +24,10 @@
 
     </thead>
 
-
     <tbody>
 
         @foreach (var product in Model)
         {
-
-
             <tr>
 
                 <td>@product.productID</td>
@@ -39,11 +37,9 @@
                 <td>@product.productPrice</td>
                 <td>@product.productStock</td>
                 <td> <a href="/Product/DELETE/@product.productID" class="btn btn-danger"> DELETE </a></td>
-                <td> <a href="/Product/Update/@product.productID" class="btn btn-success"> UPDATE</a></td>
+                <td> <a href="/Product/GetProduct/@product.productID" class="btn btn-success">UPDATE </a></td>
 
             </tr>
-
-
         }
 
     </tbody>

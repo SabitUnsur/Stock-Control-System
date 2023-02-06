@@ -54,6 +54,7 @@ namespace MvcStock.Controllers
 
         }
 
+        [HttpGet]
         public ActionResult GetProduct(int id)
         {
             var products = db.Tbl_Products.Find(id);
@@ -67,6 +68,7 @@ namespace MvcStock.Controllers
             return View("GetProduct",products);
         }
 
+        [HttpPost]
         public ActionResult Update(Tbl_Products products)
         {
             var Updatedproduct = db.Tbl_Products.Find(products.productID);
